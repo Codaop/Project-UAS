@@ -101,7 +101,7 @@ body {
 
 .detailBtn:hover {
     cursor: pointer;
-    transition: 0.1s ease;
+    transition: 0.3s ease;
     box-shadow: 4px 4px #504B38;
 }
 

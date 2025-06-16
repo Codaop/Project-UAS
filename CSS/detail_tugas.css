@@ -155,6 +155,11 @@ hr {
     width: fit-content;
     border: 1px solid black;
     border-radius: 10px;
+
+}
+
+.container-lampiran:hover {
+    transition: 0.3s ease;
     box-shadow: 3px 3px black;
 }
 
@@ -231,7 +236,7 @@ hr {
 
 .uploadBtn:hover {
     cursor: pointer;
-    transition: 0.1s ease;
+    transition: 0.3s ease;
     box-shadow: 4px 4px #504B38;
 }
 

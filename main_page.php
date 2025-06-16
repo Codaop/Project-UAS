@@ -34,8 +34,7 @@ if (!isset($_SESSION['user_is_logged_in']) || $_SESSION['user_is_logged_in'] !==
                         <td>Kelas</td>
                     </tr>
                     <?php
-                    $showDelete = $_SESSION['role'];
-                    $showUpdate = $_SESSION['role'];
+                    $showBtn_updtdel = $_SESSION['role'];
                     $showInput = $_SESSION['role'];
                     $number = 1;
                     $sql = "SELECT * FROM mahasiswa WHERE role = 1";
@@ -53,20 +52,18 @@ if (!isset($_SESSION['user_is_logged_in']) || $_SESSION['user_is_logged_in'] !==
                             echo "<td>" . $row["nomor_telepon"] . "</td>";
                             echo "<td>" . $row["asal_sekolah"] . "</td>";
                             echo "<td>" . $row["kelas"] . "</td>";
-                            echo "<td>";
-                            if ($showUpdate == 0) {
+                            if ($showBtn_updtdel == 0) {
+                                echo "<td>";
                                 echo "<form method='POST' action='update_form.php' style='display:inline;'>
-                                    <input type='hidden' name='mahasiswa_id' value='" . $row['mahasiswa_id'] . "'>
-                                    <button type='submit'>Update</button>
-                                  </form>";
-                            }
-                            if ($showDelete == 0) {
+                                <input type='hidden' name='mahasiswa_id' value='" . $row['mahasiswa_id'] . "'>
+                                <button type='submit'>Update</button>
+                                </form>";
                                 echo "<form method='POST' action='delete_data.php' style='display:inline;'>
-                                    <input type='hidden' name='mahasiswa_id' value='" . $row['mahasiswa_id'] . "'>
-                                    <button type='submit'>Delete</button>
-                                  </form>";
+                                <input type='hidden' name='mahasiswa_id' value='" . $row['mahasiswa_id'] . "'>
+                                <button type='submit'>Delete</button>
+                                </form>";
+                                echo "</td>";
                             }
-                            echo "</td>";
                             $number++;
                         }
                     }
